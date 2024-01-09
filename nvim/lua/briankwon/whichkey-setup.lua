@@ -90,6 +90,13 @@ local mappings = {
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>confirm q<CR>", "Quit" },
 	["c"] = { "<cmd>bdelete<CR>", "Close Buffer" },
+	["t"] = { "Show tmux sessions" },
+	s = {
+		name = "Split Actions",
+		v = { "<cmd>vsplit<cr>", "Vertical split" },
+		h = { "<cmd>split<cr>", "Horizontal split" },
+		c = { "<cmd>close<cr>", "Close split" },
+	},
 	r = {
 		name = "Spectre",
 		r = { "<cmd>lua require('spectre').toggle()<cr``>", "Toggle Spectre" },

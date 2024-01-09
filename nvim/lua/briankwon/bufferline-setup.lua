@@ -1,8 +1,6 @@
 local bufferline = require("bufferline")
 local setup = {
-	buffer_selected = {
-		bold = true,
-	},
+
 	options = {
 		diagnostics = "nvim-lsp",
 		mode = "buffers",
@@ -11,6 +9,9 @@ local setup = {
 			enabled = true,
 			delay = 200,
 			reveal = { "close" },
+		},
+		buffer_selected = {
+			bold = true,
 		},
 	},
 }

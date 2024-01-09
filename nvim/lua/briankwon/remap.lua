@@ -6,5 +6,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set({ 'n', 'x', 'o' }, 'z', '<Plug>(leap-backward-to)')
+vim.keymap.set({ "n", "x", "o" }, "z", "<Plug>(leap-backward-to)")
 
+-- workspace
+local workspace = require("workspace")
+vim.keymap.set("n", "<leader>t", workspace.tmux_sessions)

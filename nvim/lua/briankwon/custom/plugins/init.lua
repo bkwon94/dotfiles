@@ -20,4 +20,5 @@ return {
 	require("briankwon.custom.plugins.spectre"),
 	require("briankwon.custom.plugins.trouble"),
 	require("briankwon.custom.plugins.persistence"),
+	require("briankwon.custom.plugins.workspaces"),
 }

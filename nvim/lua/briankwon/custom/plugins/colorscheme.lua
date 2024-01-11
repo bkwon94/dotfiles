@@ -1,10 +1,7 @@
 return {
+	-- Install colorschemes
 	{ "shaunsingh/nord.nvim" },
-
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "nord",
-		},
-	},
+	{ "rose-pine/neovim", name = "rose-pine" },
+	-- Configure colorscheme
+	{ "LazyVim/LazyVim", opts = { colorscheme = "rose-pine" } },
 }

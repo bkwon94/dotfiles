@@ -25,4 +25,23 @@ require("noice").setup({
 			opts = { skip = true },
 		},
 	},
+	views = {
+		cmdline_popup = {
+			border = {
+				padding = { 0, 2 },
+			},
+			position = {
+				row = "49%",
+				col = "50%",
+			},
+		},
+	},
 })
+
+local notify = require("notify")
+notify.setup({
+	fps = 60,
+	level = "ERROR",
+	max_width = 50,
+})
+vim.notify = notify

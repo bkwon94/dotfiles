@@ -24,6 +24,13 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			on_attach = my_on_attach,
+			update_focused_file = { enable = true },
+			filters = {
+				dotfiles = false,
+				git_clean = false,
+				no_buffer = false,
+				custom = { "node_modules", "\\.cache" },
+			},
 		})
 	end,
 }

@@ -11,3 +11,7 @@ vim.keymap.set({ "n", "x", "o" }, "z", "<Plug>(leap-backward-to)")
 -- workspace
 local workspace = require("workspace")
 vim.keymap.set("n", "<leader>t", workspace.tmux_sessions)
+
+-- resize vertical buffers
+vim.keymap.set("n", "<C-W>1", "<C-W><")
+vim.keymap.set("n", "<C-W>2", "<C-W>>")

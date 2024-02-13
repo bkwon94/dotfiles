@@ -7,7 +7,8 @@ return {
 	require("briankwon.custom.plugins.lspzero"),
 	require("briankwon.custom.plugins.bufferline"),
 	require("briankwon.custom.plugins.chatgpt"),
-	require("briankwon.custom.plugins.copilot"),
+	require("briankwon.custom.plugins.copilot-cmp"),
+	require("briankwon.custom.plugins.copilot-lua"),
 	require("briankwon.custom.plugins.leap"),
 	require("briankwon.custom.plugins.tmuxnav"),
 	require("briankwon.custom.plugins.formatter"),
@@ -21,4 +22,6 @@ return {
 	require("briankwon.custom.plugins.trouble"),
 	require("briankwon.custom.plugins.persistence"),
 	require("briankwon.custom.plugins.workspaces"),
+	require("briankwon.custom.plugins.fugitive"),
+	require("briankwon.custom.plugins.codeium"),
 }

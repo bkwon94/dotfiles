@@ -37,15 +37,19 @@ end)
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		"black",
 		"bashls",
 		"dockerls",
 		"eslint",
+		"golangci_lint_ls",
 		"jsonls",
 		"lua_ls",
+		"prettier",
 		"pyright",
 		"tailwindcss",
 		"tsserver",
 		"rust_analyzer",
+		"stylua",
 		"yamlls",
 	},
 	handlers = {
@@ -67,6 +71,7 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
+		{ name = "copilot" },
 	},
 	formatting = lsp_zero.cmp_format(),
 	mapping = cmp.mapping.preset.insert({

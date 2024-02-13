@@ -99,7 +99,7 @@ local mappings = {
 	},
 	r = {
 		name = "Spectre",
-		r = { "<cmd>lua require('spectre').toggle()<cr``>", "Toggle Spectre" },
+		r = { "<cmd>lua require('spectre').toggle()<cr>", "Toggle Spectre" },
 		f = { "<cmd>lua require('spectre').open_file_search({select_word=true})<cr>", "Search on current file" },
 	},
 	C = {
@@ -120,7 +120,7 @@ local mappings = {
 	},
 	g = {
 		name = "Git",
-		g = { "<cmd>Git<cr>", "Git" },
+		g = { "<cmd>G<cr>", "Git" },
 	},
 	p = {
 		name = "Telescope Project Search",

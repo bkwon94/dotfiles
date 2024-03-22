@@ -160,6 +160,24 @@ local mappings = {
 			"Sort by language",
 		},
 	},
+	h = {
+		name = "Harpoon",
+		a = "Add file",
+		c = "Clear all",
+		h = "Toggle menu",
+		p = "Toggle previous",
+		n = "Toggle next",
+		o = "Open menu",
+		r = "Remove",
+	},
+	x = {
+		name = "Trouble/Error",
+		x = "Toggle",
+		d = "Document Diagnostics",
+		w = "Workspace Diagnostics",
+		l = "Location List",
+		q = "Quickfix List",
+	},
 }
 
 which_key.setup(setup)

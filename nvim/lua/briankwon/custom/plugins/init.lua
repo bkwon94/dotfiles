@@ -24,4 +24,6 @@ return {
 	require("briankwon.custom.plugins.workspaces"),
 	require("briankwon.custom.plugins.fugitive"),
 	require("briankwon.custom.plugins.codeium"),
+	require("briankwon.custom.plugins.harpoon"),
+	require("briankwon.custom.plugins.ts-error-translator"),
 }

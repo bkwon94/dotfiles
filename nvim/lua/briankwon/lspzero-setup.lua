@@ -37,19 +37,16 @@ end)
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"black",
 		"bashls",
 		"dockerls",
 		"eslint",
 		"golangci_lint_ls",
 		"jsonls",
 		"lua_ls",
-		"prettier",
 		"pyright",
 		"tailwindcss",
 		"tsserver",
 		"rust_analyzer",
-		"stylua",
 		"yamlls",
 	},
 	handlers = {
@@ -63,7 +60,7 @@ require("mason-lspconfig").setup({
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
+require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
 	sources = {
 		{ name = "path" },

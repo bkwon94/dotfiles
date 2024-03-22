@@ -159,3 +159,6 @@ alias config='/usr/bin/git --git-dir=/Users/brian.kwon/dotfiles/dotfiles/.git --
 
 
 
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"

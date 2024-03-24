@@ -26,4 +26,5 @@ return {
 	require("briankwon.custom.plugins.codeium"),
 	require("briankwon.custom.plugins.harpoon"),
 	require("briankwon.custom.plugins.ts-error-translator"),
+	require("briankwon.custom.plugins.astrovim"),
 }

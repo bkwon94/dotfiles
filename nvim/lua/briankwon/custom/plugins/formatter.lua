@@ -6,10 +6,11 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
+				astro = { { "prettier", "prettierd" } },
+				javascript = { { "prettier", "prettierd" } },
+				typescript = { { "prettier", "prettierd" } },
+				javascriptreact = { { "prettier", "prettierd" } },
+				typescriptreact = { { "prettier", "prettierd" } },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
@@ -18,6 +19,7 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				c = { "clang-format" },
+				tailwind = { "rustywind" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

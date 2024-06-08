@@ -90,11 +90,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+plugins+=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $ZSH/oh-my-zsh.sh
-
+eval "$(zoxide init zsh)"
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -117,13 +116,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias vim="lvim"
-alias zshconfig="nvim ~/.zshrc"
+alias zc="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias login="aws sso login --profile buoy-product-prod-delivery"
 alias login-research="aws sso login --profile buoy-product-prod-research"
-alias zshsource="source ~/.zshrc"
+alias zs="source ~/.zshrc"
 alias gc="git commit"
+alias gchb="git checkout -b"
 alias gaa="git add --all"
 alias gl="git pull"
 alias gp="git push"
@@ -139,6 +138,8 @@ alias bi="bit import"
 alias bst="bit status"
 alias k="kubectl"
 alias kgp="kubectl get pods"
+alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-permissions --no-user "
+alias cd="z"
 # bit
 export PATH="$PATH:/Users/brian.kwon/bin"
 # bit end
@@ -156,9 +157,66 @@ alias config='/usr/bin/git --git-dir=/Users/brian.kwon/dotfiles/dotfiles/.git --
 
 
 
+# -- Use fd instead of fzf --
 
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
 
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# fzf previews
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+
+# ---- FZF -----
+#theme
+fg="#D2D4DE"
+bg="#161821"
+bg_highlight="#84a0c6"
+magenta="#a093c7"
+blue="#84a0c6"
+cyan="#95c4ce"
+
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+# fzf git
+source ~/fzf-git.sh/fzf-git.sh
+# BAT
+export BAT_THEME="Nord"
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+

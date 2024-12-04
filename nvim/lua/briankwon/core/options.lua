@@ -35,3 +35,8 @@ opt.swapfile = false -- don't use swapfile
 opt.showmode = false -- don't show mode
 
 opt.mouse = "a" -- enable mouse support
+
+vim.g.vimspector_enable_mappings = "HUMAN"
+
+opt.laststatus = 3
+opt.splitkeep = "screen"

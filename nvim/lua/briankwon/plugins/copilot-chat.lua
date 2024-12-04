@@ -7,8 +7,8 @@ return {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		opts = {
-			debug = true, -- Enable debugging
-			model = "gpt-4",
+			debug = false, -- Enable debugging
+			model = "gpt-4o",
 			-- See Configuration section for rest
 		},
 		-- See Commands section for default commands if you want to lazy load on them

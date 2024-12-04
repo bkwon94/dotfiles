@@ -8,6 +8,7 @@ return {
 	opts = {
 		save_path = "~/Desktop/code-snapshots",
 		has_breadcrumbs = false,
+		has_line_number = true,
 		bg_theme = "grape",
 		watermark = "",
 	},

@@ -1,7 +1,5 @@
 
 
-
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,7 +14,7 @@ fi
 source "$HOME/.openai_key.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
+export PATH="$(brew --prefix)/opt/python@3.12/libexec/bin:$PATH"
 export PATH="$PATH:/Users/brian.kwon/Library/Python/3.9/bin"
 export PATH="${HOME}/.local/bin:$PATH"
 # Path to your oh-my-zsh installation.
@@ -140,6 +138,7 @@ alias k="kubectl"
 alias kgp="kubectl get pods"
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-permissions --no-user "
 alias cd="z"
+alias pfb="kubectl -n default port-forward svc/buoy-bazaar 9001:80"
 # bit
 export PATH="$PATH:/Users/brian.kwon/bin"
 # bit end
@@ -202,21 +201,32 @@ _fzf_comprun() {
   esac
 }
 
-# ---- FZF -----
-#theme
-fg="#D2D4DE"
-bg="#161821"
-bg_highlight="#84a0c6"
-magenta="#a093c7"
-blue="#84a0c6"
-cyan="#95c4ce"
 
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
-# Set up fzf key bindings and fuzzy completion
+export FZF_DEFAULT_OPTS="\
+--border \
+--height 40% \
+--layout=reverse \
+--color=bg+:#141A1F \
+--color=fg:#B2C1CC \
+--color=fg+:#B2C1CC \
+--color=hl:#52697A \
+--color=hl+:#52697A \
+--color=border:#3D4F5C \
+--color=info:#75BDF0 \
+--color=marker:#A875F0 \
+--color=pointer:#FF007C \
+--color=prompt:#FF007C \
+--color=spinner:#FF007C \
+--color=header:#7580F0 \
+"
+
 eval "$(fzf --zsh)"
 # fzf git
 source ~/fzf-git.sh/fzf-git.sh
 # BAT
-export BAT_THEME="Nord"
+export BAT_THEME="GitHub"
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 

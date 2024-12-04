@@ -37,3 +37,27 @@ keymap.set("v", "<leader>Sw", '<esc><cmd>lua require("spectre").open_visual()<CR
 keymap.set("n", "<leader>Sf", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
 	desc = "Search on current file",
 })
+
+-- Toggle line breakpoint on the current line
+vim.api.nvim_set_keymap("n", "<leader>T", "<Plug>VimspectorToggleBreakpoint", { noremap = true, silent = true })
+-- Toggle conditional breakpoint on the current line
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>Tt",
+	"<Plug>VimspectorToggleConditionalBreakpoint",
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap("n", "<leader>Tf", "<Plug>VimspectorAddFunctionBreakpoint", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Tc", "<Plug>VimspectorContinue", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Ts", "<Plug>VimspectorStop", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Tr", "<Plug>VimspectorRestart", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>To", "<Plug>VimspectorStepOver", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Ti", "<Plug>VimspectorStepInto", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>TO", "<Plug>VimspectorStepOut", { noremap = true, silent = true })
+
+-- Lua
+--vim.keymap.set("n", "<leader>m", require("grapple").toggle)
+--vim.keymap.set("n", "<leader>M", require("grapple").toggle_tags)
+
+-- User command
+--vim.keymap.set("n", "<leader>1", "<cmd>Grapple select index=1<cr>")

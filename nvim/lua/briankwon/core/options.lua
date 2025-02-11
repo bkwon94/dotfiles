@@ -40,3 +40,7 @@ vim.g.vimspector_enable_mappings = "HUMAN"
 
 opt.laststatus = 3
 opt.splitkeep = "screen"
+
+vim.diagnostic.config({
+	virtual_lines = true,
+})

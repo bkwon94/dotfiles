@@ -22,6 +22,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export AWS_PROFILE=buoy-product-prod
 export AWS_DEFAULT_OUTPUT=json
 export AWS_DEFAULT_REGION=us-east-1
+
+export PULUMI_CONFIG_PASSPHRASE="w8HWb8cLkdtFsBv8fQPU"
+export PULUMI_BACKEND_URL="s3://breakout-pulumi-state"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -118,6 +121,7 @@ alias zc="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias login="aws sso login --profile buoy-product-prod-delivery"
 alias login-research="aws sso login --profile buoy-product-prod-research"
+alias login-br="aws sso login --profile breakout"
 alias zs="source ~/.zshrc"
 alias gc="git commit"
 alias gchb="git checkout -b"
@@ -139,6 +143,11 @@ alias kgp="kubectl get pods"
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-permissions --no-user "
 alias cd="z"
 alias pfb="kubectl -n default port-forward svc/buoy-bazaar 9001:80"
+alias wm="wmill"
+alias wmsp="wmill script push"
+alias wmsg="wmill script generate-metadata"
+alias wmsc="wmill script bootstrap"
+alias p="pulumi"
 # bit
 export PATH="$PATH:/Users/brian.kwon/bin"
 # bit end

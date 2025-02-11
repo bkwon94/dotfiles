@@ -94,6 +94,16 @@ local mappings = {
 		r = { "<cmd>SessionRestore<cr>", "Restore session" },
 		s = { "<cmd>SessionSave<cr>", "Save session" },
 	},
+	d = {
+		name = "DiffView",
+		o = { "<cmd>DiffviewOpen<cr>", "Open diff view" },
+		O = { "<cmd>DiffviewOpen origin/main...HEAD<cr>", "Open diff view comparing to main" },
+		c = { "<cmd>DiffviewClose<cr>", "Close diff view" },
+		t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle diff view file panel" },
+		f = { "<cmd>DiffviewFocusFiles<cr>", "Focus diff view file panel" },
+		r = { "<cmd>DiffviewRefresh<cr>", "Refresh diff view" },
+		h = { "<cmd>DiffviewFileHistory<cr>", "Show diff view file history" },
+	},
 
 	C = {
 		name = "Copilot Chat",

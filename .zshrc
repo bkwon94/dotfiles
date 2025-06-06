@@ -22,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export AWS_PROFILE=buoy-product-prod
 export AWS_DEFAULT_OUTPUT=json
 export AWS_DEFAULT_REGION=us-east-1
-
+eval "$(direnv hook zsh)"  # or zsh, fish, etc.
 export PULUMI_CONFIG_PASSPHRASE="w8HWb8cLkdtFsBv8fQPU"
 export PULUMI_BACKEND_URL="s3://breakout-pulumi-state"
 # Set name of the theme to load --- if set to "random", it will
@@ -119,35 +119,64 @@ eval "$(zoxide init zsh)"
 # Example aliases
 alias zc="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias login="aws sso login --profile buoy-product-prod-delivery"
-alias login-research="aws sso login --profile buoy-product-prod-research"
-alias login-br="aws sso login --profile breakout"
+
+# AWS
+alias lbu="export AWS_PROFILE=buoy-product-prod-delivery && aws sso login"
+alias lbua="export AWS_PROFILE=buoy-analytics-prod && aws sso login"
+alias lbr="export AWS_PROFILE=breakout && aws sso login"
+alias lbra="export AWS_PROFILE=breakout-admin && aws sso login"
+alias lbur="aws sso login --profile buoy-product-prod-research"
+
 alias zs="source ~/.zshrc"
+
+# GIT
 alias gc="git commit"
+alias gca="git commit --amend"
 alias gchb="git checkout -b"
 alias gaa="git add --all"
+alias gap="git add -p"
 alias gl="git pull"
 alias gp="git push"
-alias glom="git pull origin master"
+alias glom="git pull origin main"
+alias gloms="git pull origin master"
 alias glo="git pull origin"
 alias gfgc="git fetch && git checkout"
+alias gfgcm="git fetch && git checkout main"
+
+# DOCKER
 alias dcul="docker compose -f docker-compose.local.yml up"
 alias dcb="docker compose build"
 alias dcu="docker compose up"
+alias dcd="docker compose down"
+alias d="docker"
+alias dip="docker image prune -a -f"
+alias dcp="docker container prune -f"
+alias dvp="docker volume prune -f"
+
+# BIT
 alias bs="bit start"
 alias bb="bit build"
 alias bi="bit import"
 alias bst="bit status"
+
+
+# KUBERNETES
 alias k="kubectl"
 alias kgp="kubectl get pods"
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-permissions --no-user "
 alias cd="z"
-alias pfb="kubectl -n default port-forward svc/buoy-bazaar 9001:80"
+
+
+# WINDMILL
 alias wm="wmill"
 alias wmsp="wmill script push"
 alias wmsg="wmill script generate-metadata"
 alias wmsc="wmill script bootstrap"
+
+
 alias p="pulumi"
+alias k9sc="nvim ~/Library/Application Support/k9s/"
+
 # bit
 export PATH="$PATH:/Users/brian.kwon/bin"
 # bit end

@@ -278,4 +278,3 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 
-alias claude="/Users/brian.kwon/.claude/local/claude"

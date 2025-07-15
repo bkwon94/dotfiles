@@ -1,0 +1,8 @@
+macos-icon = xray
+title = ghostty
+clipboard-read = allow 
+clipboard-write = allow
+theme = nordic 
+font-size = 14
+font-family = BerkelyMono Nerd Font
+cursor-style = block

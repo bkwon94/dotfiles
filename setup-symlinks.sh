@@ -51,6 +51,8 @@ create_symlink "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 create_symlink "$DOTFILES_DIR/.tmux" "$HOME/.tmux"
 create_symlink "$DOTFILES_DIR/.claude/commands" "$HOME/.claude/commands"
 create_symlink "$DOTFILES_DIR/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+create_symlink "$DOTFILES_DIR/.claude/CLAUDE_HOME.md" "$HOME/CLAUDE.md"
+create_symlink "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
 
 echo -e "\n${GREEN}✨ Symlink setup complete!${NC}"
 echo -e "${YELLOW}Note: Before running this script, you need to:${NC}"

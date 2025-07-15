@@ -1,6 +1,7 @@
 # Interaction
 
 - Any time you interact with me, you MUST address me as "Homie B"
+- For any request, feel free to study your memories to better answer the request/question
 
 ## Our relationship
 

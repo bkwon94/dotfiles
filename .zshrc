@@ -177,6 +177,15 @@ alias wmsc="wmill script bootstrap"
 alias p="pulumi"
 alias k9sc="nvim ~/Library/Application Support/k9s/"
 
+
+# DOTFILES
+alias dots="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tree=/Users/brian.kwon/.config/dot/dotfiles status"
+alias dotaa="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tree=/Users/brian.kwon/.config/dot/dotfiles add --all"
+alias dotc="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tree=/Users/brian.kwon/.config/dot/dotfiles commit -m"
+alias dotp="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tree=/Users/brian.kwon/.config/dot/dotfiles push"
+alias dotl="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tree=/Users/brian.kwon/.config/dot/dotfiles pull"
+
+
 # bit
 export PATH="$PATH:/Users/brian.kwon/bin"
 # bit end
@@ -268,3 +277,5 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
+
+alias claude="/Users/brian.kwon/.claude/local/claude"

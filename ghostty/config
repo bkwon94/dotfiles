@@ -3,6 +3,6 @@ title = ghostty
 clipboard-read = allow 
 clipboard-write = allow
 theme = nordic 
-font-size = 14
+font-size = 16
 font-family = BerkelyMono Nerd Font
 cursor-style = block

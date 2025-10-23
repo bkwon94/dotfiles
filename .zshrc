@@ -11,7 +11,6 @@ fi
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
-source "$HOME/.openai_key.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$(brew --prefix)/opt/python@3.12/libexec/bin:$PATH"
@@ -163,9 +162,8 @@ alias bst="bit status"
 # KUBERNETES
 alias k="kubectl"
 alias kgp="kubectl get pods"
-alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-permissions --no-user "
-alias cd="z"
 
+alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-permissions --no-user "
 
 # WINDMILL
 alias wm="wmill"
@@ -186,9 +184,7 @@ alias dotp="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tre
 alias dotl="git --git-dir=/Users/brian.kwon/.config/dot/dotfiles/.git --work-tree=/Users/brian.kwon/.config/dot/dotfiles pull"
 
 
-# bit
 export PATH="$PATH:/Users/brian.kwon/bin"
-# bit end
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

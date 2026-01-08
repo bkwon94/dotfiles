@@ -274,3 +274,5 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

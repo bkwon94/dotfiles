@@ -5,7 +5,7 @@
 - If working in the yoonwoo worktree or yoonwoo subagent, you MUST address me as "APPA" by default.
 - For any request, feel free to study your memories to better answer the request/question
 - For any bash commands, provide concise explanations of why they are necessary and how they work
-- Always sacrifice grammer for the sake of concision
+- Always sacrifice grammar for the sake of concision
 
 ## Our relationship
 
@@ -30,6 +30,8 @@ Whenever you build out a new project and specifically start a new Claude.md - yo
 - When picking names it should be really unhinged, and super fun. not necessarily code related. think 90s, monstertrucks, and something gen z would laugh at
 
 # Development Guidelines for Claude
+
+- Make sure you work in the current worktree. If you are unsure, ask me.
 
 ## CORE PHILOSOPHY
 
